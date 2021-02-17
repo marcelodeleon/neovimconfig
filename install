@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+mkdir -p ~/.config/nvim/plugin
+
+# Create symlinks for all configuration files so that they update automatically
+for f in `find -E . -regex ".*\.(vim$|lua$)" | cut -c3-`; do
+    echo $f
+    rm -rf ~/.config/nvim/$f
+    ln -s ~/.neovim/$f ~/.config/nvim/$f
+done
