@@ -46,6 +46,8 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'dracula/vim', { 'name': 'dracula' }
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 call plug#end()
 
 colorscheme dracula
