@@ -53,6 +53,31 @@ Plug 'tpope/vim-rhubarb'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+
+" Deals with surroundings
+Plug 'tpope/vim-surround'
+
+" Pairs of handy bracket mappings
+Plug 'tpope/vim-unimpaired'
+
+" Insert/delete quotes, parens and the likes in pairs
+Plug 'jiangmiao/auto-pairs'
+
+" Comment stuff out
+Plug 'tpope/vim-commentary'
+
+" Vim Wiki
+Plug 'vimwiki/vimwiki'
+
+" Sugar for UNIX commands.
+" Specifically useful to rename open files in place.
+Plug 'tpope/vim-eunuch'
+
+" Allows to navigate vim and tmux panes as if they were the same.
+Plug 'christoomey/vim-tmux-navigator'
+
+" Calendar for vim, it integrates with vimwiki.
+Plug 'git://github.com/mattn/calendar-vim'
 call plug#end()
 
 colorscheme dracula
