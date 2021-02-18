@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 mkdir -p ~/.config/nvim/plugin
+mkdir -p ~/.config/nvim/lua/marce
 
 # Create symlinks for all configuration files so that they update automatically
 for f in `find -E . -regex ".*\.(vim$|lua$)" | cut -c3-`; do
