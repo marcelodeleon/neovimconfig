@@ -48,6 +48,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'neovim/nvim-lspconfig'
 
 " Telescope
 Plug 'nvim-lua/popup.nvim'
@@ -78,6 +79,8 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " Calendar for vim, it integrates with vimwiki.
 Plug 'git://github.com/mattn/calendar-vim'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 colorscheme dracula
