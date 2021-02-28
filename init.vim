@@ -48,9 +48,19 @@ if empty(glob(vim_plug_path))
 endif
 
 call plug#begin('~/.vim/plugged')
+" Theme related plugins
 Plug 'dracula/vim', { 'name': 'dracula' }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Tpope Madness!
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
+
 Plug 'neovim/nvim-lspconfig'
 
 " Telescope
@@ -58,24 +68,11 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-" Deals with surroundings
-Plug 'tpope/vim-surround'
-
-" Pairs of handy bracket mappings
-Plug 'tpope/vim-unimpaired'
-
 " Insert/delete quotes, parens and the likes in pairs
 Plug 'jiangmiao/auto-pairs'
 
-" Comment stuff out
-Plug 'tpope/vim-commentary'
-
 " Vim Wiki
 Plug 'vimwiki/vimwiki'
-
-" Sugar for UNIX commands.
-" Specifically useful to rename open files in place.
-Plug 'tpope/vim-eunuch'
 
 " Allows to navigate vim and tmux panes as if they were the same.
 Plug 'christoomey/vim-tmux-navigator'
@@ -88,7 +85,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Python specific plugins.
 Plug 'Vimjas/vim-python-pep8-indent'
 " Python syntax highlighting.
+" If you run into an issue about `Unknown function: SemshiBufWipeout`,
+" then you need to manually run `:UpdateRemotePlugins`.
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 call plug#end()
 
 colorscheme dracula
+
+" Need to manually define the python3 binary that Neovim uses to
+" avoid problem when running Neovim from virtual envs.
+let g:python3_host_prog = '/usr/local/bin/python3'
