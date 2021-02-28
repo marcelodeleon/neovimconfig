@@ -5,7 +5,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Sources the current vimscript
-nnoremap <leader>sop :source %<cr>
+nnoremap <leader>so :source %<cr>
 
 " Quick file mappings
 noremap <leader>s :update<CR> 
@@ -31,6 +31,9 @@ set listchars=tab:▸\ ,eol:¬
 "Invisible character colors 
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
+
+" Run the current buffer in Python
+autocmd FileType python map <buffer><leader>r :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
 language en_US
 
@@ -81,6 +84,11 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'git://github.com/mattn/calendar-vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Python specific plugins.
+Plug 'Vimjas/vim-python-pep8-indent'
+" Python syntax highlighting.
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 call plug#end()
 
 colorscheme dracula
