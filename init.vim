@@ -1,3 +1,5 @@
+let mapleader = " "
+
 " Split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -37,7 +39,6 @@ autocmd FileType python map <buffer><leader>r :w<CR>:exec '!python3' shellescape
 
 language en_US
 
-let mapleader = " "
 
 " Auto-install vim-plug
 let vim_plug_path = $HOME . '/.local/share/nvim/site/autoload/plug.vim'
@@ -81,7 +82,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'git://github.com/mattn/calendar-vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+Plug 'w0rp/ale'
 " Python specific plugins.
 Plug 'Vimjas/vim-python-pep8-indent'
 " Python syntax highlighting.
