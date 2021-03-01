@@ -89,6 +89,7 @@ Plug 'Vimjas/vim-python-pep8-indent'
 " If you run into an issue about `Unknown function: SemshiBufWipeout`,
 " then you need to manually run `:UpdateRemotePlugins`.
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+Plug 'tmhedberg/SimpylFold'
 call plug#end()
 
 colorscheme dracula
