@@ -53,6 +53,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
 
 " Tpope Madness!
 Plug 'tpope/vim-fugitive'
