@@ -63,7 +63,10 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 
+" IDE like features
 Plug 'neovim/nvim-lspconfig'
+Plug 'puremourning/vimspector'
+Plug 'szw/vim-maximizer'
 
 " Telescope
 Plug 'nvim-lua/popup.nvim'
