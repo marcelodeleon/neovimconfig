@@ -21,3 +21,4 @@ set noshowmode
 set completeopt=menuone,noinsert,noselect
 set signcolumn=yes
 set colorcolumn=80
+filetype plugin on

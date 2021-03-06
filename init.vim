@@ -34,11 +34,7 @@ set listchars=tab:▸\ ,eol:¬
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 
-" Run the current buffer in Python
-autocmd FileType python map <buffer><leader>r :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-
 language en_US
-
 
 " Auto-install vim-plug
 let vim_plug_path = $HOME . '/.local/share/nvim/site/autoload/plug.vim'
