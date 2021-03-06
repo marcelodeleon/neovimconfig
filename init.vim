@@ -87,6 +87,8 @@ Plug 'git://github.com/mattn/calendar-vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'w0rp/ale'
+Plug 'metakirby5/codi.vim'
+
 " Python specific plugins.
 Plug 'Vimjas/vim-python-pep8-indent'
 " Python syntax highlighting.
