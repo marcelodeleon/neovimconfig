@@ -61,8 +61,10 @@ Plug 'tpope/vim-eunuch'
 
 " IDE like features
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
 Plug 'puremourning/vimspector'
 Plug 'szw/vim-maximizer'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Telescope
 Plug 'nvim-lua/popup.nvim'
@@ -87,10 +89,6 @@ Plug 'metakirby5/codi.vim'
 
 " Python specific plugins.
 Plug 'Vimjas/vim-python-pep8-indent'
-" Python syntax highlighting.
-" If you run into an issue about `Unknown function: SemshiBufWipeout`,
-" then you need to manually run `:UpdateRemotePlugins`.
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'tmhedberg/SimpylFold'
 call plug#end()
 
@@ -99,3 +97,6 @@ colorscheme dracula
 " Need to manually define the python3 binary that Neovim uses to
 " avoid problem when running Neovim from virtual envs.
 let g:python3_host_prog = '/usr/local/bin/python3'
+
+lua require("marce")
+lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
