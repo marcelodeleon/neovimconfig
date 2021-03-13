@@ -50,6 +50,8 @@ Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
+
 
 " Tpope Madness!
 Plug 'tpope/vim-fugitive'
@@ -70,6 +72,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " Insert/delete quotes, parens and the likes in pairs
 Plug 'jiangmiao/auto-pairs'
