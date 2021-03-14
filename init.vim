@@ -34,6 +34,9 @@ set listchars=tab:▸\ ,eol:¬
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 
+" Use 2 spaces for indentation for Javascript
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
 language en_US
 
 " Auto-install vim-plug
