@@ -8,6 +8,8 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
       \    'python': ['yapf'],
+      \   'javascript': ['prettier'],
+      \   'css': ['prettier'],
       \}
 
 nmap <leader>af :ALEFix<CR>
