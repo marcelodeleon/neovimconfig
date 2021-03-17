@@ -70,6 +70,7 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'puremourning/vimspector'
 Plug 'szw/vim-maximizer'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'maxmellon/vim-jsx-pretty'
 
 " Telescope
 Plug 'nvim-lua/popup.nvim'
