@@ -13,12 +13,22 @@ nnoremap <leader>so :source %<cr>
 noremap <leader>s :update<CR> 
 noremap <leader>w :q<CR> 
 
+" Allow the . to execute once for each line of a visual selection
+vnoremap . :normal .<CR>
+
+" Automatically change dir when switching files.
+" This enables :compl-filename to give me proper relative filenames.
+set autochdir
+
 " Command history filter with <C-n> and <C-p>
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
 " Remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+"Remove all leading whitespace by pressing F4
+nnoremap <F4> :%s/^ \+//<CR>
 
 " Expands path of the active buffer in commmand-line mode when typing '%%'
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
