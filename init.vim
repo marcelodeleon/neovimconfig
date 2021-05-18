@@ -12,6 +12,7 @@ nnoremap <leader>so :source %<cr>
 " Quick file mappings
 noremap <leader>s :update<CR> 
 noremap <leader>w :q<CR> 
+noremap <leader>e :Ex<CR> 
 
 " Allow the . to execute once for each line of a visual selection
 vnoremap . :normal .<CR>
@@ -104,6 +105,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'w0rp/ale'
 Plug 'metakirby5/codi.vim'
 Plug 'mattn/emmet-vim'
+Plug 'dbeniamine/cheat.sh-vim'
 
 " Python specific plugins.
 Plug 'Vimjas/vim-python-pep8-indent'
