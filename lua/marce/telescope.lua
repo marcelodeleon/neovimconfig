@@ -40,6 +40,26 @@ function M.git_files()
     require('telescope.builtin').git_files(opts)
 end
 
+function M.find_maa_ml_monorepo()
+    local opts = themes.get_dropdown {
+        windblend = 10,
+        border = true,
+        previewer = false,
+        shorten_path = false,
+        cwd = "~/work/moodys/projects/maa-ml-esg-monorepo",
+    }
+
+    require('telescope.builtin').find_files(opts)
+end
+
+function M.live_grep_maa_ml_monorepo()
+    require('telescope.builtin').live_grep {
+        shorten_path = true,
+        cwd = "~/work/moodys/projects/maa-ml-esg-monorepo",
+        prompt_title = "~ Search MAA-ML Monorepo ~",
+    }
+end
+
 function M.edit_neovim()
     require('telescope.builtin').git_files {
         shorten_path = true,
