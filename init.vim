@@ -76,8 +76,10 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 
 " IDE like features
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
+" Commenting out lspconfig and completion-nvim since these are causing issues
+" with vim fugitive at the moment!
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'nvim-lua/completion-nvim'
 Plug 'puremourning/vimspector'
 Plug 'szw/vim-maximizer'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -103,13 +105,12 @@ Plug 'git://github.com/mattn/calendar-vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'w0rp/ale'
-Plug 'metakirby5/codi.vim'
-Plug 'mattn/emmet-vim'
-Plug 'dbeniamine/cheat.sh-vim'
+" Plug 'metakirby5/codi.vim'
+" Plug 'mattn/emmet-vim'
+" Plug 'dbeniamine/cheat.sh-vim'
 
 " Python specific plugins.
 Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'tmhedberg/SimpylFold'
 call plug#end()
 
 colorscheme dracula

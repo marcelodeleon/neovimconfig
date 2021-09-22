@@ -1,2 +1,2 @@
 require("marce.telescope")
-require("marce.lsp")
+-- require("marce.lsp")
