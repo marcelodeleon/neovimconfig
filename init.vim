@@ -113,7 +113,12 @@ Plug 'w0rp/ale'
 Plug 'Vimjas/vim-python-pep8-indent'
 call plug#end()
 
-colorscheme dracula
+"Configure dracula-pro theme
+"Remember to install by hand the theme files
+packadd! dracula_pro
+syntax enable
+let g:dracula_colorterm = 0
+colorscheme dracula_pro
 
 " Need to manually define the python3 binary that Neovim uses to
 " avoid problem when running Neovim from virtual envs.
