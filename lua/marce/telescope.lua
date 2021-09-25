@@ -5,7 +5,11 @@ require('telescope').setup {
     defaults = {
         file_sorter = require('telescope.sorters').get_fzy_sorter,
         prompt_prefix = ' >',
-        prompt_position = 'top',
+
+        layout_config = {
+            prompt_position = 'top',
+        },
+
         color_devicons = true,
 
         file_previewer   = require('telescope.previewers').vim_buffer_cat.new,
