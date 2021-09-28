@@ -50,6 +50,7 @@ function M.find_maa_ml_monorepo()
         border = true,
         previewer = false,
         shorten_path = false,
+        hidden = true,
         cwd = "~/work/moodys/projects/maa-ml-esg-monorepo",
     }
 
@@ -58,9 +59,9 @@ end
 
 function M.live_grep_maa_ml_monorepo()
     require('telescope.builtin').live_grep {
-        shorten_path = true,
         cwd = "~/work/moodys/projects/maa-ml-esg-monorepo",
         prompt_title = "~ Search MAA-ML Monorepo ~",
+        path_display = { "shorten" },
     }
 end
 
