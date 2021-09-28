@@ -36,7 +36,13 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " Show invisible characters
 " Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
+nmap <leader>h :set list!<CR>
+
+" Open quickfix window
+nmap <leader>c :copen<CR>
+
+" Open locallist window
+nmap <leader>l :lopen<CR>
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
