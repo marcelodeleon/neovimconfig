@@ -12,7 +12,7 @@ let g:ale_fixers = {
       \   'css': ['prettier'],
       \}
 
-let g:ale_python_black_options = '--line-length 79'
+let g:ale_python_black_options = '--line-length 88'
 let g:ale_python_isort_options = '--profile black'
 
 nmap <leader>af :ALEFix<CR>
