@@ -14,6 +14,10 @@ noremap <leader>s :update<CR>
 noremap <leader>w :q<CR> 
 noremap <leader>e :Ex<CR> 
 
+" Spellchecking mappings
+noremap <leader>zz 1z=
+noremap <leader>zx z=
+
 " Allow the . to execute once for each line of a visual selection
 vnoremap . :normal .<CR>
 
@@ -53,6 +57,7 @@ highlight SpecialKey guifg=#4a4a59
 
 " Use 2 spaces for indentation for Javascript
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
 
 language en_US
 
@@ -117,6 +122,8 @@ Plug 'w0rp/ale'
 
 " Python specific plugins.
 Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'junegunn/goyo.vim'
+Plug 'tpope/vim-repeat'
 call plug#end()
 
 "Configure dracula-pro theme
