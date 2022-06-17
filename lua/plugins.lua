@@ -36,6 +36,10 @@ require("packer").startup({
         use "tpope/vim-unimpaired"
         use "tpope/vim-commentary"
         use "tpope/vim-eunuch" -- UNIX helpers.
+        use "tpope/vim-repeat"
+
+        -- Allows to navigate vim and tmux panes as if they were the same.
+        use "christoomey/vim-tmux-navigator"
     end,
     config = {
         -- Use floating window for command outputs.
@@ -44,3 +48,12 @@ require("packer").startup({
         }
     }
 })
+
+-- PackerCompile must be run whenever the plugins config is updated.
+-- This autocmd makes sure we always run PackerCompile after updates.
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]])
