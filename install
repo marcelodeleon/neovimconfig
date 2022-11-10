@@ -3,8 +3,19 @@ mkdir -p ~/.config/nvim/plugin
 mkdir -p ~/.config/nvim/ftplugin
 mkdir -p ~/.config/nvim/lua/marce
 
+get_configuration_files () {
+    if [[ "$OSTYPE" =~ ^darwin ]]; then
+        find -E . -regex ".*\.(vim$|lua$)" \
+            -not -path '*/draculapro/*' | cut -c3-
+    fi
+                                                                                                                                                                        if [[ "$OSTYPE" =~ ^linux ]]; then
+        find . -regextype egrep -regex ".*\.(vim$|lua$)" \
+            -not -path '*/draculapro/*' | cut -c3-
+    fi
+}
+
 # Create symlinks for all configuration files so that they update automatically
-for f in `find -E . -regex ".*\.(vim$|lua$)" | cut -c3-`; do
+for f in $(get_configuration_files); do
     echo $f
     rm -rf ~/.config/nvim/$f
     ln -s ~/.neovim/$f ~/.config/nvim/$f
