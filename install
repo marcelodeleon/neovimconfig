@@ -9,3 +9,12 @@ for f in `find -E . -regex ".*\.(vim$|lua$)" | cut -c3-`; do
     rm -rf ~/.config/nvim/$f
     ln -s ~/.neovim/$f ~/.config/nvim/$f
 done
+
+# Copy dracula pro theme if not already there
+THEME_FOLDER=~/.local/share/nvim/site/pack/themes/start/dracula_pro
+if [ -f "$THEME_FOLDER" ]; then
+    echo "Dracula pro theme exists."
+else 
+    mkdir -p ~/.local/share/nvim/site/pack/themes/start
+    cp -r ~/.neovim/draculapro $THEME_FOLDER
+fi
