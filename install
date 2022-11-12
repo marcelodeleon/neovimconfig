@@ -15,10 +15,11 @@ get_configuration_files () {
 }
 
 # Make sure the after/plugin folder is created inside neovim config
-if [ -f "~/.config/nvim/after/plugin" ]; then
+PLUGIN_FOLDER=~/.config/nvim/after/plugin
+if [ -f "$PLUGIN_FOLDER" ]; then
     echo "After folder created".
 else
-    mkdir -p ~/.config/nvim/after/plugin
+    mkdir -p $PLUGIN_FOLDER
 fi
 
 # Create symlinks for all configuration files so that they update automatically

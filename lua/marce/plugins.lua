@@ -40,6 +40,12 @@ require("packer").startup({
 
         -- Allows to navigate vim and tmux panes as if they were the same.
         use "christoomey/vim-tmux-navigator"
+
+	-- Telescope
+	use "nvim-lua/popup.nvim"
+	use "nvim-lua/plenary.nvim"
+	use "nvim-telescope/telescope.nvim"
+	use "nvim-telescope/telescope-fzy-native.nvim"
     end,
     config = {
         -- Use floating window for command outputs.
