@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
 
-require("plugins")
-require("keymaps")
-require("theme")
+require("marce.plugins")
+require("marce.keymaps")
