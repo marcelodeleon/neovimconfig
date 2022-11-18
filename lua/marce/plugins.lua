@@ -29,6 +29,8 @@ require("packer").startup({
         -- Packer can manage itself
         use "wbthomason/packer.nvim"
 
+        use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
         -- Tpope Madness!
         use "tpope/vim-fugitive"
         use "tpope/vim-rhubarb" -- Adds GitHub functionality to `vim-fugitive`.
@@ -41,11 +43,11 @@ require("packer").startup({
         -- Allows to navigate vim and tmux panes as if they were the same.
         use "christoomey/vim-tmux-navigator"
 
-	-- Telescope
-	use "nvim-lua/popup.nvim"
-	use "nvim-lua/plenary.nvim"
-	use "nvim-telescope/telescope.nvim"
-	use "nvim-telescope/telescope-fzy-native.nvim"
+        -- Telescope
+        use "nvim-lua/popup.nvim"
+        use "nvim-lua/plenary.nvim"
+        use "nvim-telescope/telescope.nvim"
+        use "nvim-telescope/telescope-fzy-native.nvim"
     end,
     config = {
         -- Use floating window for command outputs.
