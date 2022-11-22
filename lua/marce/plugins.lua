@@ -31,6 +31,7 @@ require("packer").startup({
 
         -- IDE like features.
         use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+        use 'neovim/nvim-lspconfig'
 
         -- Tpope Madness!
         use "tpope/vim-fugitive"
