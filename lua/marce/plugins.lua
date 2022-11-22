@@ -29,6 +29,7 @@ require("packer").startup({
         -- Packer can manage itself
         use "wbthomason/packer.nvim"
 
+        -- IDE like features.
         use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
         -- Tpope Madness!
@@ -48,6 +49,13 @@ require("packer").startup({
         use "nvim-lua/plenary.nvim"
         use "nvim-telescope/telescope.nvim"
         use "nvim-telescope/telescope-fzy-native.nvim"
+
+        -- Icons.
+        use "ryanoasis/vim-devicons"
+        use "kyazdani42/nvim-web-devicons"
+
+        -- Insert/delete quotes, parens and the likes in pairs.
+        use "jiangmiao/auto-pairs"
     end,
     config = {
         -- Use floating window for command outputs.
