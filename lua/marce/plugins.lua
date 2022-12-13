@@ -32,6 +32,11 @@ require("packer").startup({
         -- IDE like features.
         use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
         use 'neovim/nvim-lspconfig'
+        use 'hrsh7th/cmp-nvim-lsp'
+        use 'hrsh7th/cmp-buffer'
+        use 'hrsh7th/cmp-path'
+        use 'hrsh7th/cmp-cmdline'
+        use 'hrsh7th/nvim-cmp'
 
         -- Tpope Madness!
         use "tpope/vim-fugitive"
@@ -54,6 +59,7 @@ require("packer").startup({
         -- Icons.
         use "ryanoasis/vim-devicons"
         use "kyazdani42/nvim-web-devicons"
+        use "onsails/lspkind.nvim"
 
         -- Insert/delete quotes, parens and the likes in pairs.
         use "jiangmiao/auto-pairs"
