@@ -62,7 +62,28 @@ require("packer").startup({
         use "onsails/lspkind.nvim"
 
         -- Insert/delete quotes, parens and the likes in pairs.
-        use "jiangmiao/auto-pairs"
+        use "windwp/nvim-autopairs"
+
+        use {
+            "nvim-neorg/neorg",
+            run = ":Neorg sync-parsers",
+            config = function()
+                require('neorg').setup {
+                    load = {
+                        ["core.defaults"] = {}, -- Loads default behaviour
+                        ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
+                        ["core.norg.dirman"] = { -- Manages Neorg workspaces
+                            config = {
+                                workspaces = {
+                                    notes = "~/notes",
+                                },
+                            },
+                        },
+                    },
+                }
+            end,
+            requires = "nvim-lua/plenary.nvim",
+        }
     end,
     config = {
         -- Use floating window for command outputs.

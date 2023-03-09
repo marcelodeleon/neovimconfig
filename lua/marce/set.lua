@@ -6,6 +6,10 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
+vim.api.nvim_command('autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab')
+vim.api.nvim_command('autocmd FileType typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab')
+vim.api.nvim_command('autocmd FileType typescriptreact setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab')
+
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.smartindent = true
