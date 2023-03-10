@@ -13,7 +13,7 @@ vim.api.nvim_command('autocmd FileType typescriptreact setlocal tabstop=2 softta
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.smartindent = true
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 vim.opt.hidden = true
 vim.opt.swapfile = false
