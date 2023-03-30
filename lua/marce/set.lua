@@ -27,3 +27,8 @@ vim.opt.colorcolumn = '88'
 
 vim.opt.undofile = true
 vim.opt.undodir = '~/.vim/undodir'
+
+if vim.env.VIRTUAL_ENV then
+  vim.g.python3_host_prog = vim.env.VIRTUAL_ENV .. '/bin/python'
+end
+
