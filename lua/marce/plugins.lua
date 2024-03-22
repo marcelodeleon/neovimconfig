@@ -81,25 +81,11 @@ require("packer").startup({
         -- Insert/delete quotes, parens and the likes in pairs.
         use "windwp/nvim-autopairs"
 
+        -- Integrate external tools (like black, flake8, and isort),
+        -- directly into Neovim's built-in LSP.
         use {
-            "nvim-neorg/neorg",
-            run = ":Neorg sync-parsers",
-            config = function()
-                require('neorg').setup {
-                    load = {
-                        ["core.defaults"] = {}, -- Loads default behaviour
-                        ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
-                        ["core.norg.dirman"] = { -- Manages Neorg workspaces
-                            config = {
-                                workspaces = {
-                                    notes = "~/notes",
-                                },
-                            },
-                        },
-                    },
-                }
-            end,
-            requires = "nvim-lua/plenary.nvim",
+          'jose-elias-alvarez/null-ls.nvim',
+          requires = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' }
         }
     end,
     config = {
