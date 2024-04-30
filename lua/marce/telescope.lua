@@ -1,7 +1,9 @@
 local actions = require('telescope.actions')
 local themes = require('telescope.themes')
 
-require('telescope').setup {
+local telescope = require('telescope')
+
+telescope.setup {
     defaults = {
         file_sorter = require('telescope.sorters').get_fzy_sorter,
         prompt_prefix = ' >',
@@ -30,6 +32,9 @@ require('telescope').setup {
         }
     }
 }
+vim.keymap.set("n", "<C-P>", function()
+  require('marce.telescope').git_files()
+end, { silent = true })
 
 local M = {}
 
@@ -87,5 +92,4 @@ function M.git_branches()
         end
     })
 end
-
 return M

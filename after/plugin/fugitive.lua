@@ -5,6 +5,6 @@ vim.cmd([[
 
 vim.opt.diffopt = 'vertical'
 
-vim.keymap.set("n", "<leader>gs", ":G<CR>")
-vim.keymap.set("n", "<leader>g0", ":0Gclog<CR>")
-vim.keymap.set("n", "<leader>g-", ":Gclog<CR>")
+vim.keymap.set("n", "<leader>gs", ":G<CR>", { silent = true })
+vim.keymap.set("n", "<leader>g0", ":0Gclog<CR>", { silent = true })
+vim.keymap.set("n", "<leader>g-", ":Gclog<CR>", { silent = true })
