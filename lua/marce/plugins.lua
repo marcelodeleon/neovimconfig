@@ -2,6 +2,8 @@ local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
         "git",
+        c
+
         "clone",
         "--filter=blob:none",
         "https://github.com/folke/lazy.nvim.git",
@@ -13,6 +15,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+    -- Icons.
+    "ryanoasis/vim-devicons",
+    "onsails/lspkind.nvim",
+    'nvim-tree/nvim-web-devicons',
+
     {
         'VonHeikemen/lsp-zero.nvim',
         dependencies = {
@@ -38,11 +45,6 @@ local plugins = {
 
     {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
 
-    {"ellisonleao/gruvbox.nvim", config = function()
-        -- Use the Gruvbox theme
-        vim.cmd.colorscheme('gruvbox')
-    end},
-
     -- Tpope Madness!
     "tpope/vim-fugitive",
     "tpope/vim-rhubarb", -- Adds GitHub functionality to `vim-fugitive`.
@@ -61,10 +63,11 @@ local plugins = {
     "nvim-telescope/telescope.nvim",
     "nvim-telescope/telescope-fzy-native.nvim",
 
-    -- Icons.
-    "ryanoasis/vim-devicons",
-    "kyazdani42/nvim-web-devicons",
-    "onsails/lspkind.nvim",
+
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
 
     -- Insert/delete quotes, parens and the likes in pairs.
     "windwp/nvim-autopairs",
@@ -75,6 +78,22 @@ local plugins = {
         'jose-elias-alvarez/null-ls.nvim',
         dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' }
     },
+
+    {
+      "folke/noice.nvim",
+      event = "VeryLazy",
+      opts = {
+        -- add any options here
+      },
+      dependencies = {
+        -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+        "MunifTanjim/nui.nvim",
+        -- OPTIONAL:
+        --   `nvim-notify` is only needed, if you want to use the notification view.
+        --   If not available, we use `mini` as the fallback
+        -- "rcarriga/nvim-notify",
+      }
+    }
 }
 
 require("lazy").setup(plugins, {})
