@@ -9,6 +9,12 @@ null_ls.setup({
         extra_args = { "--single-quote", "--jsx-single-quote" },
         -- Adjust `extra_args` based on your Prettier config preferences
     }),
+    null_ls.builtins.diagnostics.eslint.with({
+        filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    }),
+    null_ls.builtins.code_actions.eslint.with({
+        filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    }),
   },
 })
 
