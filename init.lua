@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 
-require("marce.plugins")
+require("marce.theme")
 require("marce.keymaps")
-require("marce.telescope")
 require("marce.set")
+require("marce.plugins")
+require("marce.telescope")
