@@ -44,6 +44,7 @@ local plugins = {
     },
 
     {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+    "nvim-treesitter/playground",
 
     -- Tpope Madness!
     "tpope/vim-fugitive",
