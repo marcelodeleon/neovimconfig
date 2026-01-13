@@ -2,6 +2,21 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
+-- Detect Poetry virtualenv dynamically
+local function get_poetry_venv()
+  -- Run 'poetry env info --path' in the current working directory
+  local handle = io.popen("cd " .. vim.fn.getcwd() .. " && poetry env info --path 2>/dev/null")
+  if handle then
+    local venv_path = handle:read("*a")
+    handle:close()
+    venv_path = venv_path:gsub("%s+", "") -- trim whitespace
+    if venv_path ~= "" then
+      return venv_path
+    end
+  end
+  return nil
+end
+
 require('mason').setup()
 require('mason-lspconfig').setup({
   ensure_installed = { 'tsserver', 'pyright' },
@@ -16,11 +31,26 @@ require("mason-lspconfig").setup_handlers {
     function (server_name) -- default handler (optional)
         require("lspconfig")[server_name].setup {}
     end,
-    -- Next, you can provide a dedicated handler for specific servers.
-    -- For example, a handler override for the `rust_analyzer`:
-    -- ["rust_analyzer"] = function ()
-    --     require("rust-tools").setup {}
-    -- end
+    -- Dedicated handler for Pyright with Poetry venv detection
+    ["pyright"] = function ()
+        require("lspconfig").pyright.setup({
+            before_init = function(_, config)
+                local venv_path = get_poetry_venv()
+                if venv_path then
+                    config.settings.python.pythonPath = venv_path .. "/bin/python"
+                end
+            end,
+            settings = {
+                python = {
+                    analysis = {
+                        autoSearchPaths = true,
+                        useLibraryCodeForTypes = true,
+                        diagnosticMode = "workspace",
+                    }
+                }
+            }
+        })
+    end,
 }
 
 local cmp = require('cmp')
