@@ -8,6 +8,30 @@ telescope.setup {
         file_sorter = require('telescope.sorters').get_fzy_sorter,
         prompt_prefix = ' >',
 
+        -- Dynamic path display: full path when it fits, shortened when too long
+        path_display = function(_, path)
+            -- Dropdown picker width is ~70 chars usable space (after icons/borders)
+            local max_len = 70
+
+            -- If path fits, show it fully
+            if #path <= max_len then
+                return path
+            end
+
+            -- Shorten directories but keep filename and parent dir full
+            local parts = vim.split(path, "/")
+            local shortened = {}
+            for i, part in ipairs(parts) do
+                if i >= #parts - 1 then
+                    -- Keep last 2 parts (parent + filename) full
+                    table.insert(shortened, part)
+                else
+                    table.insert(shortened, part:sub(1, 1))
+                end
+            end
+            return table.concat(shortened, "/")
+        end,
+
         layout_config = {
             prompt_position = 'top',
         },
@@ -43,7 +67,7 @@ function M.git_files()
         windblend = 10,
         border = true,
         previewer = false,
-        shorten_path = false,
+        -- Will use the global path_display = "smart" setting
     }
 
     require('telescope.builtin').git_files(opts)
@@ -54,9 +78,9 @@ function M.find_maa_ml_monorepo()
         windblend = 10,
         border = true,
         previewer = false,
-        shorten_path = false,
         hidden = true,
         cwd = "~/work/moodys/projects/maa-ml-esg-monorepo",
+        -- Will use the global path_display = "smart" setting
     }
 
     require('telescope.builtin').find_files(opts)
@@ -66,13 +90,13 @@ function M.live_grep_maa_ml_monorepo()
     require('telescope.builtin').live_grep {
         cwd = "~/work/moodys/projects/maa-ml-esg-monorepo",
         prompt_title = "~ Search MAA-ML Monorepo ~",
-        path_display = { "shorten" },
+        -- Use truncate for live grep since you see more context in the preview
+        path_display = { "truncate" },
     }
 end
 
 function M.edit_neovim()
     require('telescope.builtin').git_files {
-        shorten_path = true,
         cwd = "~/.neovim",
         prompt_title = "~ Neovim Configuration ~",
         height = 10,
@@ -80,6 +104,7 @@ function M.edit_neovim()
         layout_options = {
             preview_width = 0.75,
         },
+        -- Will use the global path_display = "smart" setting
     }
 end
 
