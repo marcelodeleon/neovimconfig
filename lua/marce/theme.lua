@@ -92,7 +92,7 @@ local function set_diff_highlights()
     vim.api.nvim_set_hl(0, 'diffAdded', {link = 'DiffAdd'})
     vim.api.nvim_set_hl(0, 'diffRemoved', {link = 'DiffDelete'})
     vim.api.nvim_set_hl(0, 'diffChanged', {link = 'DiffChange'})
-    vim.api.nvim_set_hl(0, 'diffLine', {fg = bglighter, italic = true})
+    vim.api.nvim_set_hl(0, 'diffLine', {fg = '#80FFEA', italic = true})
     vim.api.nvim_set_hl(0, 'diffSubname', {fg = orange})
 end
 
