@@ -95,6 +95,19 @@ local plugins = {
     },
 
     {
+        "sindrets/diffview.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewFileHistory", "DiffviewRefresh", "DiffviewToggleFiles", "DiffviewFocusFiles" },
+    },
+
+    {
+        name = "marginalia",
+        dir = "~/projects/marginalia.nvim",
+        dependencies = { "sindrets/diffview.nvim" },
+        cmd = { "Review", "ReviewClose" },
+    },
+
+    {
         "epwalsh/obsidian.nvim",
         version = "*",  -- recommended, use latest release instead of latest commit
         lazy = true,
