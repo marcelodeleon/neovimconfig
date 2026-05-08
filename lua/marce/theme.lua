@@ -99,6 +99,10 @@ end
 -- Apply diff highlights immediately after colorscheme loads
 set_diff_highlights()
 
+-- Marginalia float styling
+vim.api.nvim_set_hl(0, 'MarginaliaBorder', {fg = '#FFCA80'})
+vim.api.nvim_set_hl(0, 'MarginaliaTitle', {fg = '#FFCA80', bold = true})
+
 -- Reapply diff highlights when entering diff/git buffers to ensure they persist
 vim.api.nvim_create_autocmd({"FileType", "BufEnter"}, {
     pattern = {"diff", "git", "fugitive", "fugitiveblame"},
