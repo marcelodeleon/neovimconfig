@@ -56,30 +56,23 @@ local function set_diff_highlights()
     local red_bg = '#3a1a1a'     -- Dark red background for deletions
     local orange_bg = '#3a2a1a'  -- Dark orange background for changes
 
-    -- DiffAdd: Lines that were added (green with dark green background)
+    -- DiffAdd: Lines that were added (background only — preserves syntax highlighting)
     vim.api.nvim_set_hl(0, 'DiffAdd', {
-        fg = green,
         bg = green_bg,
-        bold = false
     })
 
-    -- DiffDelete: Lines that were deleted (red with dark red background)
+    -- DiffDelete: Lines that were deleted (background only — preserves syntax highlighting)
     vim.api.nvim_set_hl(0, 'DiffDelete', {
-        fg = red,
         bg = red_bg,
-        bold = false
     })
 
-    -- DiffChange: Lines that were modified (orange with dark orange background)
+    -- DiffChange: Lines that were modified (background only — preserves syntax highlighting)
     vim.api.nvim_set_hl(0, 'DiffChange', {
-        fg = orange,
         bg = orange_bg,
-        bold = false
     })
 
-    -- DiffText: Specific parts of changed lines (yellow foreground, orange background, bold)
+    -- DiffText: Specific changed text within a line (bold + background, no fg override)
     vim.api.nvim_set_hl(0, 'DiffText', {
-        fg = yellow,
         bg = orange_bg,
         bold = true
     })
